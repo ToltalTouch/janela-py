@@ -1,18 +1,29 @@
-##INTERFACE GRAFICA PARA PROGRAMAS PYTHON
+# Interface Gráfica para Programas Python
 
-# Proposta:
-A ideia é para ajudar o usuario final de um programa a ter uma interface que possa auxiliar o uso
-     1. **Melhorar a saida de dados**
-       - Barra de progresso;
-       - O arquivo que esta sendo feito a leitura;
-       - Mensagens de erro;
-       - ...
-       
-     2. **Auxiliar a entrada de informações como**
-        - Usuario;
-        - Senha;
-        - Selecionar pasta;
-        - Selecionar arquivo (Se necessario);
+## Proposta
+Este projeto visa criar uma interface gráfica para facilitar o uso de programas Python, melhorando a interação com o usuário final. A interface ajuda tanto na **saída de dados** quanto na **entrada de informações**, garantindo uma experiência mais amigável.
 
-#  Andamento do programa:
-**Ainda esta em faze incial, sendo necessario estudar melhor como utilizar as bibliotecas**
+### Funcionalidades Planejadas
+
+1. **Melhorias na saída de dados:**
+   - Exibição de **barra de progresso** para acompanhar processos longos;
+   - Visualização do **arquivo que está sendo lido ou processado** no momento;
+   - Apresentação de **mensagens de erro** de maneira clara e intuitiva.
+
+2. **Facilitação da entrada de informações:**
+   - Campos para **usuário** e **senha**, quando necessário;
+   - Opção para o usuário **selecionar pastas** e **arquivos** facilmente por meio da interface gráfica;
+   - Outras opções de entrada de dados configuráveis.
+
+## Andamento do Projeto
+Este projeto está em **fase inicial**, sendo necessário estudar e testar as bibliotecas de interface gráfica disponíveis, como **Tkinter**, **PyQt**, ou **Kivy**, para definir a melhor solução.
+
+## Como Contribuir
+Se você quiser contribuir ou acompanhar o desenvolvimento, sinta-se à vontade para clonar o repositório e sugerir melhorias.
+
+---
+
+### Sugestões adicionais:
+1. **Tecnologias Utilizadas**: tkinter, selenium.
+2. **Como Executar o Projeto**: Adicione instruções básicas para rodar o projeto localmente (mesmo que ainda não esteja finalizado).
+3. **Objetivos Futuros**: Se já tiver uma ideia clara de novas funcionalidades, inclua uma seção sobre o roadmap do projeto.
