@@ -1,14 +1,14 @@
 ##INTERFACE GRAFICA PARA PROGRAMAS PYTHON
 
 # Proposta:
-**A ideia é para ajudar o usuario final de um programa a ter uma interface que possa auxiliar o uso:**
-     1. **Melhorar a saida de dados como:**
+A ideia é para ajudar o usuario final de um programa a ter uma interface que possa auxiliar o uso
+     1. **Melhorar a saida de dados**
        - Barra de progresso;
        - O arquivo que esta sendo feito a leitura;
        - Mensagens de erro;
        - ...
        
-     2. **Auxiliar a entrada de informações como:**
+     2. **Auxiliar a entrada de informações como**
         - Usuario;
         - Senha;
         - Selecionar pasta;
