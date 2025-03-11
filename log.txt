@@ -1,0 +1,6 @@
+2025-03-10 16:03:40,692 - INFO - Caminho arquivo c:\Python\janela-py\manual-pdf\arquivo.pdf
+2025-03-10 16:30:36,999 - INFO - Caminho arquivo c:\Python\janela-py\manual-pdf\arquivo.pdf
+2025-03-10 16:32:04,862 - INFO - Caminho arquivo c:\Python\janela-py\manual-pdf\arquivo.pdf
+2025-03-10 16:33:36,608 - INFO - Caminho arquivo c:\Python\janela-py\manual-pdf\arquivo.pdf
+2025-03-10 16:33:52,144 - INFO - Caminho arquivo c:\Python\janela-py\manual-pdf\arquivo.pdf
+2025-03-10 16:35:35,848 - INFO - Caminho arquivo c:\Python\janela-py\manual-pdf\arquivo.pdf

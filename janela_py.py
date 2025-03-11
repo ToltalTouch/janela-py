@@ -1,3 +1,4 @@
+import os
 import tkinter as tk
 from tkinter import messagebox
 from selenium import webdriver
@@ -5,44 +6,55 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
 
 # Inicializa o driver do Chrome fora da função para evitar problemas de escopo
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-driver.get("https://github.com/login")
+dir_atual = os.path.dirname(os.path.abspath(__file__))
 
+chromedriver_path = os.path.join(dir_atual, "chromedriver-win64", "chromedriver.exe")
+chrome_options = Options()
+chrome_options.add_argument("--start-maximized")
+service = Service(chromedriver_path)
+driver = webdriver.Chrome(service=service, options=chrome_options)
+driver.get("https://github.com/login")
+  
+
+   
 def login_site(login, senha):
     try:
         # Aguarda até que o campo de login esteja presente
         user_field = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.XPATH, '//*[@id="login_field"]'))
-        )
+            )
         user_field.send_keys(login)
 
         # Aguarda até que o campo de senha esteja presente
         password_field = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.XPATH, '//*[@id="password"]'))
-        )
+            )
         password_field.send_keys(senha)
-
+        
         # Clica no botão de login
         login_button = WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, '//*[@name="commit"]'))
-        )
+            )
         login_button.click()
-
+        
         # Aguarda a presença do elemento que indica um erro de login
         error_element_present = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, '//*[@id="js-flash-container"]/div/div/button'))
-        )
-
+            EC.presence_of_element_located((By.XPATH, '//*[@id="js-flash-container"]/div/div/div'))
+                )
         # Se o elemento de erro estiver presente, limpa os campos
         if error_element_present:
+            close_error = WebDriverWait(driver, 3).until(
+                EC.presence_of_element_located((By.XPATH, '//*[@id="js-flash-container"]/div/div/button/svg'))
+                )
+            close_error.click()
             user_field.clear()
             password_field.clear()
             messagebox.showerror("Erro", "Erro ao tentar logar: credenciais inválidas")
             return False
-
+        
         # Aguarda a presença de um elemento que só aparece após o login bem-sucedido
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.XPATH, '//*[contains(text(),"Your repositories")]'))
@@ -51,7 +63,9 @@ def login_site(login, senha):
         return True
     except Exception as e:
         messagebox.showerror("Erro", "Erro ao tentar logar: " + str(e))
-        return False
+        return False   
+
+
 
 def submit_login():
     login = login_entry.get()
